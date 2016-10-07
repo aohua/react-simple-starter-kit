@@ -4,7 +4,8 @@
   "description": "A simple version of react boilerplate with foundation and jest",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -23,11 +24,38 @@
   },
   "homepage": "https://github.com/AOHUA/react-simple-starter-kit#readme",
   "devDependencies": {
+    "autoprefixer": "^6.5.0",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0",
+    "jest": "^16.0.1",
+    "postcss-loader": "^0.13.0",
+    "precss": "^1.4.0",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "humps": "^1.1.0",
+    "immutable": "^3.8.1",
+    "lodash": "^4.16.4",
+    "normalizr": "^2.2.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "react-router-scroll": "^0.3.2",
+    "redux": "^3.6.0",
+    "redux-saga": "^0.12.0"
   }
 }
