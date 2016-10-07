@@ -1,0 +1,33 @@
+{
+  "name": "react-simple-starter-kit",
+  "version": "1.0.0",
+  "description": "A simple version of react boilerplate with foundation and jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AOHUA/react-simple-starter-kit.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "jest",
+    "foundation"
+  ],
+  "author": "AOHUA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AOHUA/react-simple-starter-kit/issues"
+  },
+  "homepage": "https://github.com/AOHUA/react-simple-starter-kit#readme",
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
