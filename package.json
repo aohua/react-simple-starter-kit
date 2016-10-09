@@ -41,13 +41,16 @@
     "jest": "^16.0.1",
     "postcss-loader": "^0.13.0",
     "precss": "^1.4.0",
+    "redux-logger": "^2.7.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "es6-promise": "^4.0.5",
     "humps": "^1.1.0",
     "immutable": "^3.8.1",
+    "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.16.4",
     "normalizr": "^2.2.1",
     "react": "^15.3.2",

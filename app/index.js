@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 
 import routes from './routes';
-import configureStore from './store';
+import configureStore from './store/store';
 import rootSaga from './sagas/sagas';
 
 const store = configureStore();
