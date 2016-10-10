@@ -11,6 +11,7 @@ function createRequestTypes(base) {
   }, {});
 }
 
+// generate request types
 export const REPO = createRequestTypes('REPO');
 
 

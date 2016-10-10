@@ -7,6 +7,9 @@ import routes from './routes';
 import configureStore from './store/store';
 import rootSaga from './sagas/sagas';
 
+// inject foundation
+import './foundation-sites/scss/foundation.scss';
+
 const store = configureStore();
 store.runSaga(rootSaga);
 /* global document:true */

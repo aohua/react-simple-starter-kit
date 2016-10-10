@@ -1,12 +1,12 @@
 import React, { PropTypes, Children } from 'react';
 
-import styles from './styles.css';
+import styles from './styles.scss';
 
 function Button(props) {
   const className = props.className || styles.button;
 
   return (
-    <button className={className} onClick={props.onClick}>
+    <button className={className} type="button" onClick={props.onClick}>
       {Children.toArray(props.children)}
     </button>
   );
