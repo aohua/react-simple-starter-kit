@@ -17,16 +17,21 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel',
     }, {
+      test: /\.scss$/,
+      exclude: /node_modules/,
+      loader: 'style!css!sass?modules&&importLoaders=1&sourceMap&localIdentName=[name]',
+    },
+    {
       test: /\.css$/,
       exclude: /node_modules/,
-      loader: 'style-loader!css-loader?localIdentName=[local]__[path][name]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader',
-    }, {
-      test: /\.scss$/,
-      loader: 'style!css!sass?sourceMap',
+      loader: 'style!css?modules&&importLoaders=1&sourceMap&localIdentName=[local]__[path][name]__[hash:base64:5]!postcss-loader',
     },
   ],
   },
-  sassResources: './app/foundation-sites/scss/foundation',
+  sassLoader: {
+    includePaths: ['./app/foundation-sites/scss'],
+  },
+  sassResources: './app/foundation-sites/scss/foundation.scss',
   postcss: function() {
     return [precss, autoprefixer];
   },

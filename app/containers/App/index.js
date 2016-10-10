@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+// inject foundation
+import '../../foundation-sites/scss/foundation.scss';
 
 function App(props) {
   return (
