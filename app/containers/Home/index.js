@@ -6,7 +6,7 @@ import { fetchRepo } from '../../actions';
 
 function Home(props) {
   return (
-    <Button className="alert" onClick={() => props.handleBtnOnClick('search/repositories?q=react+language:javascript&sort=stars&order=desc')}>
+    <Button className="button alert" onClick={() => props.handleBtnOnClick('search/repositories?q=react+language:javascript&sort=stars&order=desc')}>
       <div>Hello world!</div>
     </Button>
   );

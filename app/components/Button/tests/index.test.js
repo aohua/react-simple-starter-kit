@@ -7,7 +7,7 @@ import Button from '../index';
 /* global test:true expect:true */
 test('Button renders correctly', () => {
   const component = renderer.create(
-    <Button>Facebook</Button>
+    <Button>React simple starter kit</Button>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

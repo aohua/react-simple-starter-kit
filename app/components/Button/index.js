@@ -3,10 +3,10 @@ import React, { PropTypes, Children } from 'react';
 import styles from './styles.css';
 
 function Button(props) {
-  const className = props.className || styles.button;
+  const className = props.className ? `${props.className} ${styles.button}` : styles.button;
 
   return (
-    <button className={`button ${className}`} type="button" onClick={props.onClick}>
+    <button className={`${className}`} type="button" onClick={props.onClick}>
       {Children.toArray(props.children)}
     </button>
   );
