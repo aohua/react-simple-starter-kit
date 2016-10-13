@@ -1,8 +1,8 @@
 import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 
-import { api } from '../services';
-import { REPO } from '../actions/index';
+import { api } from '../../services';
+import { REPO } from './constants';
 
 function* fetchRepo(action) {
   try {
@@ -13,12 +13,10 @@ function* fetchRepo(action) {
   }
 }
 
-function* watchFatchRepo() {
+function* getFatchRepoWatcher() {
   yield* takeLatest(REPO.REQUEST, fetchRepo);
 }
 
-export default function* rootSaga() {
-  yield [
-    watchFatchRepo(),
-  ];
-}
+export default [
+  getFatchRepoWatcher,
+];

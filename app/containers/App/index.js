@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
 // inject foundation
-import '../../foundation-sites/scss/foundation.scss';
+import '../../foundation/scss/foundation.scss';
 
 function App(props) {
   return (
     <div className="container">
-      { props.children }
+      { React.Children.toArray(props.children) }
     </div>
   );
 }

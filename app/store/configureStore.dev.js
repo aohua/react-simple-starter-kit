@@ -1,23 +1,42 @@
 import { createStore, applyMiddleware } from 'redux';
-import createSagaMiddleware, { END } from 'redux-saga';
+import createSagaMiddleware from 'redux-saga';
+import { routerMiddleware } from 'react-router-redux';
+import { fromJS } from 'immutable';
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 import createLogger from 'redux-logger';
 
-import reducer from '../reducers';
+import createReducer from '../reducers';
 
-export default function configureStore() {
-  // create the saga middleware
-  const sagaMiddleware = createSagaMiddleware();
+// create the saga middleware
+const sagaMiddleware = createSagaMiddleware();
+const logger = createLogger();
 
+export default function configureStore(initialState = {}, history) {
+  const middlewares = [
+    sagaMiddleware,
+    logger,
+    routerMiddleware(history),
+  ];
   const store = createStore(
-    reducer,
-    applyMiddleware(
-      sagaMiddleware,
-      createLogger()
-    )
+    createReducer(),
+    fromJS(initialState),
+    applyMiddleware(...middlewares)
   );
-
+  // Create hook for async sagas
   store.runSaga = sagaMiddleware.run;
-  store.close = () => store.dispatch(END);
+
+  store.asyncReducers = {};
+  // Make reducers hot reloadable, see http://mxs.is/googmo
+  /* istanbul ignore next */
+  if (module.hot) {
+    module.hot.accept('../reducers', () => {
+      System.import('../reducers').then((reducerModule) => {
+        const createReducers = reducerModule.default;
+        const nextReducers = createReducers(store.asyncReducers);
+        store.replaceReducer(nextReducers);
+      });
+    });
+  }
+
   return store;
 }

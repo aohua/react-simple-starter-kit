@@ -4,8 +4,8 @@
   "description": "A simple version of react boilerplate with foundation and jest",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config webpack.config.js",
+    "test": "jest",
+    "start": "webpack-dev-server --config webpack.config.js --watch --inline --hot",
     "setup": "npm install ./scripts/ && sudo npm install -g ./scripts/ && npm install"
   },
   "repository": {
@@ -25,11 +25,9 @@
   },
   "homepage": "https://github.com/AOHUA/react-simple-starter-kit#readme",
   "devDependencies": {
-    "autoprefixer": "^6.5.0",
     "babel-core": "^6.17.0",
     "babel-jest": "^16.0.0",
     "babel-loader": "^6.2.5",
-    "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-1": "^6.16.0",
@@ -43,19 +41,18 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^16.0.1",
     "node-sass": "^3.10.1",
-    "postcss-loader": "^0.13.0",
-    "precss": "^1.4.0",
     "react-test-renderer": "^15.3.2",
     "redux-logger": "^2.7.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.2",
+    "webpack": "2.1.0-beta.22",
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
     "es6-promise": "^4.0.5",
     "humps": "^1.1.0",
     "immutable": "^3.8.1",
+    "invariant": "^2.2.1",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.16.4",
     "normalizr": "^2.2.1",
@@ -63,11 +60,14 @@
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.6",
     "react-router-scroll": "^0.3.2",
     "redux": "^3.6.0",
+    "redux-immutable": "^3.0.8",
     "redux-saga": "^0.12.0",
     "reselect": "^2.5.4",
-    "sass-resources-loader": "^1.1.0"
+    "warning": "^3.0.0",
+    "babel-polyfill": "^6.16.0"
   },
   "jest": {
     "moduleNameMapper": {

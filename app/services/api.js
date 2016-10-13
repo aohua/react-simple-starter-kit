@@ -1,4 +1,4 @@
-import { Schema, normalize } from 'normalizr';
+import { Schema, normalize, arrayOf } from 'normalizr';
 import { camelizeKeys } from 'humps';
 import promise from 'es6-promise';
 import fetch from 'isomorphic-fetch';
@@ -32,9 +32,13 @@ function callApi(endpoint, schema) {
     );
 }
 
-const repoSchema = new Schema('repo', {
-  idAttribute: 'fullName',
+const repoList = new Schema('repoList');
+const repo = new Schema('repo');
+
+repoList.define({
+  item: arrayOf(repo),
 });
 
+
 // api services
-export const fetchRepo = url => callApi(url, repoSchema);
+export const fetchRepo = url => callApi(url, repoList);

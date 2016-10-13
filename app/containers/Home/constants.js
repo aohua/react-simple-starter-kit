@@ -13,11 +13,3 @@ function createRequestTypes(base) {
 
 // generate request types
 export const REPO = createRequestTypes('REPO');
-
-
-// action generator
-function action(type, payload = {}) {
-  return { type, ...payload };
-}
-
-export const fetchRepo = url => action(REPO.REQUEST, { url });
