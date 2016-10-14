@@ -1,16 +1,13 @@
-import { Schema, normalize, arrayOf } from 'normalizr';
+// import { Schema, normalize, arrayOf } from 'normalizr';
 import { camelizeKeys } from 'humps';
-import promise from 'es6-promise';
 import fetch from 'isomorphic-fetch';
-
-promise.polyfill();
 
 
 const API_ROOT = 'https://api.github.com/';
 
 // Fetches an API response and normalizes the result JSON according to schema.
 // This makes every API response have the same shape, regardless of how nested it was.
-function callApi(endpoint, schema) {
+function callApi(endpoint) {
   const fullUrl = (endpoint.indexOf(API_ROOT) === -1) ? API_ROOT + endpoint : endpoint;
   return fetch(fullUrl)
     .then(response =>
@@ -22,9 +19,10 @@ function callApi(endpoint, schema) {
 
       const camelizedJson = camelizeKeys(json);
 
-      return Object.assign({},
-        normalize(camelizedJson, schema)
-      );
+      // return Object.assign({},
+      //   normalize(camelizedJson, schema)
+      // );
+      return camelizedJson;
     })
     .then(
       response => ({ response }),
@@ -32,13 +30,13 @@ function callApi(endpoint, schema) {
     );
 }
 
-const repoList = new Schema('repoList');
-const repo = new Schema('repo');
-
-repoList.define({
-  item: arrayOf(repo),
-});
+// const repoList = new Schema('repoList');
+// const repo = new Schema('repo');
+//
+// repoList.define({
+//   item: arrayOf(repo),
+// });
 
 
 // api services
-export const fetchRepo = url => callApi(url, repoList);
+export const fetchRepo = url => callApi(url);
