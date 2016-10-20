@@ -3,7 +3,8 @@ const SUCCESS = 'SUCCESS';
 const FAILURE = 'FAILURE';
 
 
-// generate different status for the action
+/* generate different status for the action
+uncomment it if needed. */
 function createRequestTypes(base) {
   return [REQUEST, SUCCESS, FAILURE].reduce((acc, type) => {
     const requestName = acc;
@@ -15,4 +16,4 @@ function createRequestTypes(base) {
 export const CHANGE_USERNAME = 'CHANGE_USERNAME';
 
 // generate request types
-export const REPO = createRequestTypes('REPO');
+export const REPO = createRequestTypes('repo');

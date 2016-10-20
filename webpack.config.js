@@ -1,3 +1,6 @@
+const precss = require('precss');
+const autoprefixer = require('autoprefixer');
+
 module.exports = {
   entry: [
     'babel-polyfill',
@@ -14,14 +17,14 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel',
     }, {
-      test: /\.scss$/,
+      test: /\.css$/,
       exclude: /node_modules/,
-      loader: 'style!css!sass?sourceMap',
+      loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&sourceMap!postcss-loader',
     },
   ],
   },
-  sassLoader: {
-    includePaths: ['./app/foundation/scss'],
+  postcss() {
+    return [precss, autoprefixer];
   },
   devServer: {
     historyApiFallback: true,

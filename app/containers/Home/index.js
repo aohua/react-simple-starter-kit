@@ -2,41 +2,31 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import Button from '../../components/Button/index';
 import { fetchRepo, changeUsername } from './actions';
-import { selectHome, selectUsername } from './selectors';
+import { selectUsername } from './selectors';
 
 export class Home extends Component {
-
-  componentWillReceiveProps(nextProps) {
-  }
-
   render() {
     return (
       <section>
         <input
           id="username"
           type="text"
-          placeholder="..."
+          placeholder="React Simple Starter Kit"
           value={this.props.userName}
           onChange={this.props.onChangeUsername}
         />
-        <Button className="button alert" onClick={() => this.props.handleBtnOnClick('search/repositories?q=react+language:javascript&sort=stars&order=desc')}>
-          <div>Hello world!</div>
-        </Button>
       </section>
     );
   }
 }
 
 Home.propTypes = {
-  handleBtnOnClick: PropTypes.func,
   userName: PropTypes.string,
   onChangeUsername: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
-  repo: selectHome(),
   userName: selectUsername(),
 });
 

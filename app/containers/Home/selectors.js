@@ -11,6 +11,5 @@ const selectUsername = () => createSelector(
 );
 
 export {
-  selectHome,
   selectUsername,
 };
