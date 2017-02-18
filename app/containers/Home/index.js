@@ -4,11 +4,12 @@ import { createStructuredSelector } from 'reselect';
 
 import { fetchRepo, changeUsername } from './actions';
 import { selectUsername } from './selectors';
+import Button from '../../components/Button';
 
 export class Home extends Component {
   render() {
     return (
-      <section>
+      <div>
         <input
           id="username"
           type="text"
@@ -16,7 +17,8 @@ export class Home extends Component {
           value={this.props.userName}
           onChange={this.props.onChangeUsername}
         />
-      </section>
+        <Button>OK</Button>
+      </div>
     );
   }
 }

@@ -1,4 +1,3 @@
-// import { Schema, normalize, arrayOf } from 'normalizr';
 import { camelizeKeys } from 'humps';
 import fetch from 'isomorphic-fetch';
 
@@ -18,10 +17,6 @@ function callApi(endpoint) {
       }
 
       const camelizedJson = camelizeKeys(json);
-
-      // return Object.assign({},
-      //   normalize(camelizedJson, schema)
-      // );
       return camelizedJson;
     })
     .then(
@@ -29,13 +24,6 @@ function callApi(endpoint) {
       error => ({ error: error.message || 'Something bad happened' })
     );
 }
-
-// const repoList = new Schema('repoList');
-// const repo = new Schema('repo');
-//
-// repoList.define({
-//   item: arrayOf(repo),
-// });
 
 
 // api services
