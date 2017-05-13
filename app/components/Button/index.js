@@ -1,4 +1,5 @@
-import React, { PropTypes, Children } from 'react';
+import React, { Children } from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.css';
 
 function Button(props) {
@@ -13,7 +14,7 @@ function Button(props) {
 
 Button.propTypes = {
   className: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
 };
 

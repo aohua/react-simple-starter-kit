@@ -1,0 +1,22 @@
+@value primary-color: #fbe543;
+@value secondary-color: #020202;
+@value tertiary-color: #565656;
+@value disabled-color: #d5d5d5;
+
+@value border-color: #e4e5e6;
+@value body-background-color: #f7f8f9;
+
+@value primary-text-color: #000000;
+@value secondary-text-color: #bab9ba;
+@value tertiary-text-color: #000000;
+@value quaternary-text-color: #f4f4f4;
+@value quinary-text-color: #535455;
+@value font-size-tiny: 0.6rem;
+@value font-size-small: 0.8rem;
+@value font-size-medium: 1rem;
+@value font-size-large: 1.2rem;
+@value font-size-xlarge: 1.5rem;
+
+@value extra-small: (max-width: 450px);
+@value small: (max-width: 768px);
+@value medium: (max-width: 1200px);

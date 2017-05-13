@@ -1,5 +1,4 @@
-const precss = require('precss');
-const autoprefixer = require('autoprefixer');
+const path = require('path');
 
 module.exports = {
   entry: [
@@ -7,24 +6,36 @@ module.exports = {
     './app/app.js',
   ],
   output: {
-    path: __dirname,
-    publicPath: '/',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/assets/',
     filename: 'bundle.js',
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel',
+      use: [
+        'babel-loader',
+      ],
     }, {
       test: /\.css$/,
       exclude: /node_modules/,
-      loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&sourceMap!postcss-loader',
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            importLoaders: 1,
+            localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
+          },
+        },
+        {
+          loader: 'postcss-loader',
+        },
+      ],
     },
-  ],
-  },
-  postcss() {
-    return [precss, autoprefixer];
+    ],
   },
   devServer: {
     historyApiFallback: true,

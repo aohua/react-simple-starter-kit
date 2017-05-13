@@ -10,7 +10,8 @@ function generateComponent(dir, name) {
 * Awesome work!
 */
 
-import React, { PropTypes, Children } from 'react';
+import React, { Children } from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './styles.css';
 

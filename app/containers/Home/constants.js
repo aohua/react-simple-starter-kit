@@ -1,17 +1,4 @@
-const REQUEST = 'REQUEST';
-const SUCCESS = 'SUCCESS';
-const FAILURE = 'FAILURE';
-
-
-/* generate different status for the action
-uncomment it if needed. */
-function createRequestTypes(base) {
-  return [REQUEST, SUCCESS, FAILURE].reduce((acc, type) => {
-    const requestName = acc;
-    requestName[type] = `${base}_${type}`;
-    return requestName;
-  }, {});
-}
+import createRequestTypes from '../../utils/createRequestTypes';
 
 export const CHANGE_USERNAME = 'CHANGE_USERNAME';
 

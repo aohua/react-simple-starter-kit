@@ -1,3 +1,14 @@
+@value primary-color from '../../settings.css';
+
 .button {
-  background: red;
+  background: primary-color;
+  color: #fff;
+  border: 2px solid primary-color;
+  border-radius: 0px;
+  box-shadow: none;
+  height: 45px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 12px 16px;
+  outline: none;
 }
