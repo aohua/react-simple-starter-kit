@@ -27,3 +27,15 @@ yarn install / npm install
 ```
 npm start
 ```
+## Global css settings
+
+All the css global variables should be located in side app/settings.css
+
+And import it in other components and containers.
+
+Example:
+
+```
+@value primary-color from '../../settings.css';
+```
+
