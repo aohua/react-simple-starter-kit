@@ -1,6 +1,6 @@
 # React simple starter kit
 
-A simplest version of react 
+A simplest version of react boilerplate
 
 ## Getting Started
 
