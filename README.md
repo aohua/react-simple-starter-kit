@@ -29,7 +29,7 @@ npm start
 ```
 ## Global css settings
 
-All the css global variables should be located in side app/settings.css
+All the css global variables should be located inside app/settings.css
 
 And import it in other components and containers.
 
