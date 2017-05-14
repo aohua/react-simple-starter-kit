@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import styles from './styles.css';
 
 function ${name}(props) {
-  const className = props.className ? \`\${props.className} \${styles.${lowercaseFirstLetter(name)}}\` : styles.${lowercaseFirstLetter(name)};
+  const className = props.className ? \`\${styles.${lowercaseFirstLetter(name)}} \${props.className}\` : styles.${lowercaseFirstLetter(name)};
 
   return (
     <div className={\`\${className}\`}>
