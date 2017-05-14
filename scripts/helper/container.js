@@ -21,30 +21,6 @@ class ${name} extends Component {
     super(props);
   }
 
-  componentWillMount() {
-
-  }
-
-  componentDidMount() {
-
-  }
-
-  componentWillReceiveProps(nextProps) {
-
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-
-  }
-
   render() {
     return (
       <div>React-simple-starter-kit</div>

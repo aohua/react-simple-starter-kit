@@ -1,5 +1,10 @@
 const fs = require('fs');
 
+// string helper
+function lowercaseFirstLetter(string) {
+  return string.charAt(0).toLowerCase() + string.slice(1);
+}
+
 function generateComponent(dir, name) {
   fs.mkdirSync(`${dir}/tests`);
 
@@ -16,7 +21,7 @@ import PropTypes from 'prop-types';
 import styles from './styles.css';
 
 function ${name}(props) {
-  const className = props.className ? \`\${props.className} \${styles.${name.toLowerCase()}}\` : styles.${name.toLowerCase()};
+  const className = props.className ? \`\${props.className} \${styles.${lowercaseFirstLetter(name)}}\` : styles.${lowercaseFirstLetter(name)};
 
   return (
     <div className={\`\${className}\`}>
@@ -63,7 +68,7 @@ test('${name} renders correctly', () => {
 * Awesome work!
 */
 
-.${name} {
+.${lowercaseFirstLetter(name)} {
 
 }`;
 
