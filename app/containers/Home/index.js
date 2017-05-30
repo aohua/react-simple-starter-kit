@@ -32,7 +32,7 @@ export class Home extends PureComponent {
       </ListItem>);
   }
   render() {
-    const { userName, onChangeUsername, handleBtnOnClick } = this.props;
+    const { userName, onChangeUsername, handleBtnOnClick, users } = this.props;
     return (
       <div className={styles.container}>
         <div className={styles.searchBar}>
@@ -53,7 +53,11 @@ export class Home extends PureComponent {
         <div className={styles.contentWrapper}>
           <List>
             <ListSubHeader className={styles.listSubHeader} caption="Explore users" />
-            { this.renderUsers() }
+            { users.length > 0 ? this.renderUsers() : <ListItem
+              className={styles.listItem}
+              caption="No Results"
+              legend="Please try again"
+            /> }
           </List>
         </div>
       </div>
@@ -65,7 +69,7 @@ Home.propTypes = {
   userName: PropTypes.string,
   onChangeUsername: PropTypes.func,
   handleBtnOnClick: PropTypes.func,
-  users: PropTypes.shape,
+  users: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 const mapStateToProps = createStructuredSelector({

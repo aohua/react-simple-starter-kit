@@ -12,7 +12,7 @@ export class App extends PureComponent {
   render() {
     return (
       <div>
-        {this.props.isLoading && <Loader />}
+        { this.props.isLoading && <Loader /> }
         { React.Children.toArray(this.props.children) }
       </div>
     );
