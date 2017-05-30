@@ -2,11 +2,11 @@ import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 
 import { api } from '../../services';
-import { REPO } from './constants';
+import { REPO } from '../App/constants';
 
 function* fetchRepo(action) {
   try {
-    const repo = yield call(api.fetchRepo, action.url);
+    const repo = yield call(api.fetchRepo, action.name);
     yield put({ type: REPO.SUCCESS, repo });
   } catch (e) {
     yield put({ type: REPO.FAILURE, message: e.message });

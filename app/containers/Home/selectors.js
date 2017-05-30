@@ -10,6 +10,12 @@ const selectUsername = () => createSelector(
   homeState => homeState.get('userName')
 );
 
+const selectUsers = () => createSelector(
+  selectHome(),
+  homeState => homeState.get('users')
+);
+
 export {
   selectUsername,
+  selectUsers,
 };

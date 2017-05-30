@@ -1,12 +1,12 @@
 {
   "name": "react-simple-starter-kit",
   "version": "1.0.0",
-  "description": "A simple version of react boilerplate with foundation and jest",
+  "description": "A simple version of react boilerplate with jest",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server --config webpack.config.js --watch --inline --hot",
-    "setup": "npm install ./scripts/ && sudo npm install -g ./scripts/ && npm install"
+    "setup": "npm install ./scripts/ && sudo npm install -g ./scripts/ && yarn install"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/AOHUA/react-simple-starter-kit#readme",
   "devDependencies": {
-    "autoprefixer": "^7.0.1",
     "babel-core": "^6.17.0",
     "babel-jest": "^16.0.0",
     "babel-loader": "^6.2.5",
@@ -41,8 +40,11 @@
     "eslint-plugin-react": "^6.3.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^16.0.1",
+    "postcss-cssnext": "^2.11.0",
+    "postcss-each": "^0.10.0",
+    "postcss-import": "^10.0.0",
     "postcss-loader": "^2.0.5",
-    "precss": "^1.4.0",
+    "postcss-mixins": "^6.0.0",
     "react-test-renderer": "^15.3.2",
     "redux-logger": "^2.7.0",
     "style-loader": "^0.13.1",
@@ -65,9 +67,11 @@
     "react-router": "^3.0.0",
     "react-router-redux": "^4.0.6",
     "react-router-scroll": "^0.4.2",
+    "react-toolbox": "^2.0.0-beta.8",
     "redux": "^3.6.0",
     "redux-immutable": "^3.0.8",
     "redux-saga": "^0.12.0",
+    "redux-state-sync": "^0.0.4",
     "reselect": "^2.5.4",
     "warning": "^3.0.0"
   },

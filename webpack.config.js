@@ -19,20 +19,18 @@ module.exports = {
       ],
     }, {
       test: /\.css$/,
-      exclude: /node_modules/,
       use: [
         'style-loader',
         {
           loader: 'css-loader',
           options: {
             modules: true,
+            sourceMap: true,
             importLoaders: 1,
-            localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
+            localIdentName: '[path]--[name]--[local]--[hash:base64:5]',
           },
         },
-        {
-          loader: 'postcss-loader',
-        },
+        'postcss-loader',
       ],
     },
     ],

@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { routerMiddleware } from 'react-router-redux';
 import { fromJS } from 'immutable';
+import { actionStorageMiddleware, createStorageListener } from 'redux-state-sync';
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 import createLogger from 'redux-logger';
 
@@ -15,6 +16,7 @@ export default function configureStore(initialState = {}, history) {
   const middlewares = [
     sagaMiddleware,
     logger,
+    actionStorageMiddleware,
     routerMiddleware(history),
   ];
   const store = createStore(
@@ -22,6 +24,11 @@ export default function configureStore(initialState = {}, history) {
     fromJS(initialState),
     applyMiddleware(...middlewares)
   );
+
+  /*
+  *  Create a listener on store to dispatch the latest action being triggered on other tabs.
+  */
+  createStorageListener(store);
   // Create hook for async sagas
   store.runSaga = sagaMiddleware.run;
 

@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  & > .searchBar {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    & > .searchInput {
+      flex: 2.5;
+    }
+    & > .searchButton {
+      flex: 0.5;
+    }
+  }
+  & > .contentWrapper {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+}

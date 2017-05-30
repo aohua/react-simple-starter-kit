@@ -1,16 +1,16 @@
-@value primary-color from '../../settings.css';
+@value primary-color, secondary-color from '../../settings.css';
 
 .button {
   background: primary-color;
-  color: #fff;
-  border: 2px solid primary-color;
+  color: #fff !important;
   border-radius: 0px;
   box-shadow: none;
-  height: 40px;
   cursor: pointer;
   font-weight: bold;
-  padding: 12px 16px;
   outline: none;
+  &:hover {
+    background: secondary-color !important;
+  }
   &:disabled {
     background: #dddddd;
     border: 2px solid #dddddd;
